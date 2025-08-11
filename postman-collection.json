@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "School Management API",
+    "description": "Complete API collection for School Management system with location-based features.",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-backend-project-sql-production.up.railway.app/",
+          "protocol": "https",
+          "host": ["mini-backend-project-sql-production", "up", "railway", "app"],
+          "path": [""]
+        },
+        "description": "Check if API is running and get endpoint information"
+      }
+    },
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"DAV Public School Solan\",\n  \"address\": \"Chambaghat, Solan, Himachal Pradesh 173213\",\n  \"latitude\": 30.9045,\n  \"longitude\": 77.0967\n}"
+        },
+        "url": {
+          "raw": "https://mini-backend-project-sql-production.up.railway.app/api/addSchool",
+          "protocol": "https",
+          "host": ["mini-backend-project-sql-production", "up", "railway", "app"],
+          "path": ["api", "addSchool"]
+        },
+        "description": "Add a new school with validation"
+      }
+    },
+    {
+      "name": "List Schools by Distance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://mini-backend-project-sql-production.up.railway.app/api/listSchools?latitude=30.9045&longitude=77.0967",
+          "protocol": "https",
+          "host": ["mini-backend-project-sql-production", "up", "railway", "app"],
+          "path": ["api", "listSchools"],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "30.9045",
+              "description": "User's latitude coordinate"
+            },
+            {
+              "key": "longitude",
+              "value": "77.0967",
+              "description": "User's longitude coordinate"
+            }
+          ]
+        },
+        "description": "Get all schools sorted by distance from user location"
+      }
+    }
+  ]
+}
